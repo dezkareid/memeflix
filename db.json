@@ -2,7 +2,15 @@
   "memes": [
     {
       "id": 1,
-      "name": "x-cosa"
+      "name": "chicharito",
+      "description": "imagini cosi chinguini",
+      "image": "http://chicharito.com/chingonas.png"
+    },
+    {
+      "id": 2,
+      "name": "ay si ay si",
+      "description": "Neil DeGrease Tyson",
+      "image": "http://chicharito.com/chingonas.png"
     }
   ]
 }
