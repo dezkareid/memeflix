@@ -1,0 +1,14 @@
+.list {
+  list-style-type: none;
+}
+
+.list--item {
+  margin: 1.5rem 0;
+}
+
+@media screen and (min-width:321px) {
+  .list--item {
+    display: inline-block;
+    margin: 0 1.5rem;
+  }
+}

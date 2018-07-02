@@ -1,12 +1,18 @@
 /* global fetch */
 import React from 'react'
+import MemeList from '../../components/MemeList'
 
 export default class HomePage extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      memeGallery: []
+      memes: []
     }
+    this._handleClick = this._handleClick.bind(this)
+  }
+
+  _handleClick (event) {
+    console.log(event)
   }
 
   componentDidMount () {
@@ -14,13 +20,14 @@ export default class HomePage extends React.Component {
       .then(response => response.json())
       .then(response => {
         this.setState({
-          memeGallery: response
+          memes: response
         })
       })
+      .catch(error => {
+        console.error(error)
+      })
   }
-
   render () {
-    const memes = this.state.memeGallery.map(meme => <li key={meme.id}>{meme.name}</li>)
-    return (<ul>{memes}</ul>)
+    return (<MemeList memes={this.state.memes} onClick={this._handleClick} />)
   }
 }
